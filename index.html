@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaelo Portfolio Site</title>
+    <!-- Include Lucide Icons from CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+
+ <!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        // Your theme extensions if any
+      }
+    }
+  }
+</script>
+
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-container">
+            <div class="nav-inner">
+                <div class="logo">Portfolio</div>
+                
+                <!-- Desktop Menu -->
+                <div class="desktop-menu">
+                    <button class="nav-link" data-section="home">Home</button>
+                    <button class="nav-link" data-section="about">About</button>
+                    <button class="nav-link" data-section="skills">Skills</button>
+                    <button class="nav-link" data-section="projects">Projects</button>
+                    <button class="nav-link" data-section="contact">Contact</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-button" id="mobile-menu-button">
+                    <i data-lucide="menu" id="menu-icon"></i>
+                    <i data-lucide="x" id="close-icon" style="display: none;"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="mobile-menu-items">
+                    <button class="mobile-nav-link" data-section="home">Home</button>
+                    <button class="mobile-nav-link" data-section="about">About</button>
+                    <button class="mobile-nav-link" data-section="skills">Skills</button>
+                    <button class="mobile-nav-link" data-section="projects">Projects</button>
+                    <button class="mobile-nav-link" data-section="contact">Contact</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="gradient-overlay"></div>
+        
+        <!-- Animated background elements -->
+        <div class="animated-background">
+            <div class="pulse-circle-1"></div>
+            <div class="pulse-circle-2"></div>
+        </div>
+
+        <div class="container text-center">
+            <div class="space-y-6">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Hi, I'm <span class="text-gradient">Kaelo</span>
+                </h1>
+                
+                <div class="typewriter" id="typewriter">
+                    <span id="typewriter-text"></span>
+                    <span class="cursor" id="cursor">|</span>
+                </div>
+                
+                <p class="intro-text">
+                    I create beautiful, responsive web applications using modern technologies. 
+                    Passionate about clean code, user experience, and turning ideas into reality.
+                </p>
+
+                <div class="social-icons">
+                    <a href="#" class="icon-button">
+                        <i data-lucide="github" class="icon"></i>
+                    </a>
+                    <a href="#" class="icon-button">
+                        <i data-lucide="linkedin" class="icon"></i>
+                    </a>
+                    <a href="#" class="icon-button">
+                        <i data-lucide="mail" class="icon"></i>
+                    </a>
+                </div>
+
+                <div class="scroll-button">
+                    <button id="discover-button" class="discover-button">
+                        <span>Discover More</span>
+                        <i data-lucide="arrow-down" class="arrow-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    About <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Me</span>
+                </h2>
+                <p class="text-gray-400 text-lg">Get to know me better</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+                        <h3 class="text-2xl font-semibold text-white mb-4">My Story</h3>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            I'm a passionate full-stack developer with over 5 years of experience creating 
+                            digital solutions that make a difference. I love turning complex problems into 
+                            simple, beautiful designs.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            When I'm not coding, you'll find me exploring new technologies, contributing to 
+                            open-source projects, or enjoying a good cup of coffee while brainstorming the next big idea.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid gap-6">
+                    <div class="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:border-blue-400/50 transition-all duration-300">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="p-3 bg-blue-500/20 rounded-full">
+                                <i data-lucide="code" class="w-6 h-6 text-blue-400"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold text-white">Clean Code</h4>
+                        </div>
+                        <p class="text-gray-300">
+                            I believe in writing maintainable, scalable code that stands the test of time.
+                        </p>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-cyan-500/10 to-teal-500/10 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:border-cyan-400/50 transition-all duration-300">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="p-3 bg-cyan-500/20 rounded-full">
+                                <i data-lucide="lightbulb" class="w-6 h-6 text-cyan-400"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold text-white">Innovation</h4>
+                        </div>
+                        <p class="text-gray-300">
+                            Always eager to learn new technologies and implement creative solutions.
+                        </p>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-teal-500/10 to-emerald-500/10 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:border-teal-400/50 transition-all duration-300">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="p-3 bg-teal-500/20 rounded-full">
+                                <i data-lucide="coffee" class="w-6 h-6 text-teal-400"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold text-white">Dedication</h4>
+                        </div>
+                        <p class="text-gray-300">
+                            Committed to delivering high-quality results and exceeding expectations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    My <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Skills</span>
+                </h2>
+                <p class="text-gray-400 text-lg">Technologies I work with</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Frontend Skills -->
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 hover:border-blue-400/50 transition-all duration-300">
+                    <h3 class="text-2xl font-semibold text-white mb-6 text-center">Frontend</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">HTML</span>
+                                <span class="text-blue-400 font-semibold">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar" style="width: 95%; animation-delay: 0s;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">CSS</span>
+                                <span class="text-blue-400 font-semibold">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar" style="width: 85%; animation-delay: 0.2s;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">JavaScript</span>
+                                <span class="text-blue-400 font-semibold">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar" style="width: 75%; animation-delay: 0.4s;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">Tailwind CSS</span>
+                                <span class="text-blue-400 font-semibold">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar" style="width: 80%; animation-delay: 0.6s;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Skills -->
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 hover:border-blue-400/50 transition-all duration-300">
+                    <h3 class="text-2xl font-semibold text-white mb-6 text-center">Backend</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">Node.js</span>
+                                <span class="text-blue-400 font-semibold">40%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar" style="width: 40%; animation-delay: 0.8s;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">Java</span>
+                                <span class="text-blue-400 font-semibold">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar" style="width: 75%; animation-delay: 1.0s;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">MySQL</span>
+                                <span class="text-blue-400 font-semibold">50%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar" style="width: 50%; animation-delay: 1.2s;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">Bootstrap</span>
+                                <span class="text-blue-400 font-semibold">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar" style="width: 95%; animation-delay: 1.4s;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Others -->
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 hover:border-blue-400/50 transition-all duration-300">
+                    <h3 class="text-2xl font-semibold text-white mb-6 text-center">Tools & Others</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">Git</span>
+                                <span class="text-blue-400 font-semibold">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar" style="width: 90%; animation-delay: 1.6s;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">JavaFX</span>
+                                <span class="text-blue-400 font-semibold">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar" style="width: 75%; animation-delay: 1.8s;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">Scene Builder</span>
+                                <span class="text-blue-400 font-semibold">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar" style="width: 70%; animation-delay: 2.0s;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-300 font-medium">Figma</span>
+                                <span class="text-blue-400 font-semibold">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="progress-bar" style="width: 85%; animation-delay: 2.2s;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Featured <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Projects</span>
+                </h2>
+                <p class="text-gray-400 text-lg">Some of my recent work</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden border border-white/10 hover:border-blue-400/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=500&q=80" 
+                            alt="E-Commerce Platform"
+                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-3">E-Commerce Platform</h3>
+                        <p class="text-gray-300 mb-4 line-clamp-3">A full-stack e-commerce solution built with React, Node.js, and Stripe integration. Features include user authentication, shopping cart, and admin dashboard.</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">MongoDB</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Stripe</span>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <a href="#" class="flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors duration-300">
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden border border-white/10 hover:border-blue-400/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=500&q=80" 
+                            alt="Task Management App"
+                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-3">Task Management App</h3>
+                        <p class="text-gray-300 mb-4 line-clamp-3">A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">TypeScript</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Firebase</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Tailwind</span>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <a href="#" class="flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors duration-300">
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden border border-white/10 hover:border-blue-400/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <img 
+                            src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=500&q=80" 
+                            alt="Weather Dashboard"
+                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-white mb-3">Weather Dashboard</h3>
+                        <p class="text-gray-300 mb-4 line-clamp-3">A beautiful weather dashboard that provides detailed forecasts, interactive maps, and personalized weather insights using modern APIs.</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Vue.js</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Chart.js</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Weather API</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">CSS3</span>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <a href="#" class="flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors duration-300">
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                                <span>Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<!-- Contact Section -->
+<section id="contact" class="py-20 relative bg-gray-900">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                Get In <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Touch</span>
+            </h2>
+            <p class="text-gray-400 text-lg">Let's work together on your next project</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Contact Info Card -->
+            <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+                <h3 class="text-2xl font-semibold text-white mb-6">Let's Talk</h3>
+                <p class="text-gray-300 mb-8">
+                    I'm always interested in new opportunities and exciting projects. 
+                    Whether you have a question or just want to say hi, feel free to reach out!
+                </p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="p-3 bg-blue-500/20 rounded-full">
+                            <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-medium">Email</p>
+                            <p class="text-gray-400">Kaeloselome2@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="p-3 bg-cyan-500/20 rounded-full">
+                            <i data-lucide="phone" class="w-5 h-5 text-cyan-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-medium">Phone</p>
+                            <p class="text-gray-400">(+267 72693341)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="p-3 bg-teal-500/20 rounded-full">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-teal-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-medium">Location</p>
+                            <p class="text-gray-400">Gaborone, Block 8</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label class="block text-white font-medium mb-2">Name</label>
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            required
+                            class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors duration-300"
+                            placeholder="Name"
+                        />
+                    </div>
+                    
+                    <div>
+                        <label class="block text-white font-medium mb-2">Email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            required
+                            class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors duration-300"
+                            placeholder="your.email@example.com"
+                        />
+                    </div>
+                    
+                    <div>
+                        <label class="block text-white font-medium mb-2">Message</label>
+                        <textarea
+                            name="message"
+                            id="message"
+                            required
+                            rows="5"
+                            class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 transition-colors duration-300 resize-none"
+                            placeholder="Tell me about your project..."
+                        ></textarea>
+                    </div>
+                    
+                    <button
+                        type="submit"
+                        class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-3 px-6 rounded-lg font-medium hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 flex items-center justify-center space-x-2"
+                    >
+                        <span>Send Message</span>
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="text-center mt-16 pt-8 border-t border-white/10">
+            <p class="text-gray-400">
+                © 2024 Kaelo Portfolio. Built with HTML, CSS & Lucide Icons.
+            </p>
+        </div>
+    </div>
+</section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS as fallback
+  emailjs.init('YOUR_EMAILJS_USER_ID'); // Get this from EmailJS dashboard
+</script>
+
+
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Typewriter effect
+        const textElement = document.getElementById('typewriter-text');
+        const cursorElement = document.getElementById('cursor');
+        const fullText = "Full Stack Developer";
+        let index = 0;
+
+        function typeWriter() {
+            if (index < fullText.length) {
+                textElement.textContent += fullText.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        // Cursor blink effect
+        function blinkCursor() {
+            cursorElement.classList.toggle('hidden');
+        }
+
+        // Start effects
+        typeWriter();
+        setInterval(blinkCursor, 500);
+
+        // Smooth scroll to about section
+        document.getElementById('discover-button').addEventListener('click', function() {
+            const aboutSection = document.getElementById('about');
+            if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('open');
+            
+            if (mobileMenu.classList.contains('open')) {
+                menuIcon.style.display = 'none';
+                closeIcon.style.display = 'block';
+            } else {
+                menuIcon.style.display = 'block';
+                closeIcon.style.display = 'none';
+            }
+        });
+
+        // Scroll detection for nav
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for all nav links
+        document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                const sectionId = this.getAttribute('data-section');
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu.classList.contains('open')) {
+                        mobileMenu.classList.remove('open');
+                        menuIcon.style.display = 'block';
+                        closeIcon.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        // Animate progress bars on scroll into view
+document.addEventListener('DOMContentLoaded', function() {
+  const progressBars = document.querySelectorAll('.progress-bar');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        const width = bar.style.width; // Get width from HTML (e.g., "85%")
+        bar.style.width = '0'; // Reset
+        setTimeout(() => {
+          bar.style.width = width; // Animate to target width
+        }, parseFloat(bar.style.animationDelay || '0') * 1000); // Respect delay
+      }
+    });
+  }, { threshold: 0.5 }); // Trigger when 50% visible
+  
+  progressBars.forEach(bar => observer.observe(bar));
+});
+
+//form handling
+document.getElementById('contact-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const form = e.target;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalContent = submitBtn.innerHTML;
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+            <span class="flex items-center justify-center gap-2">
+                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Sending...
+            </span>
+        `;
+
+        // Try Formspree first
+        try {
+            const formData = new FormData(form);
+            formData.append('_replyto', formData.get('email'));
+            formData.append('_subject', 'New Portfolio Message');
+
+            const formspreeResponse = await fetch('https://formspree.io/f/mbjlnvgy', { // 🔁 Replace with your Formspree form ID
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (formspreeResponse.ok) {
+                showSuccess(form, submitBtn, originalContent);
+                return;
+            }
+        } catch (error) {
+            console.log('Formspree failed, trying EmailJS');
+        }
+
+        // Fallback to EmailJS
+        try {
+            await emailjs.sendForm(
+                'your_service_id',     // 🔁 Replace with your EmailJS Service ID
+                'your_template_id',    // 🔁 Replace with your EmailJS Template ID
+                form
+            );
+            showSuccess(form, submitBtn, originalContent);
+        } catch (error) {
+            console.error('Both services failed:', error);
+            submitBtn.innerHTML = `
+                <span class="flex items-center justify-center gap-2 text-red-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                    </svg>
+                    Failed - Please email me directly
+                </span>
+            `;
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalContent;
+            }, 5000);
+        }
+    });
+
+    function showSuccess(form, button, originalContent) {
+        button.innerHTML = `
+            <span class="flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                Message Sent!
+            </span>
+        `;
+        form.reset();
+        setTimeout(() => {
+            button.disabled = false;
+            button.innerHTML = originalContent;
+        }, 3000);
+    }
+
+    // ✅ Initialize EmailJS if you're using it
+    // Put your EmailJS public key here
+    emailjs.init("your_public_key"); // 🔁 Replace with your EmailJS public key
+
+    </script>
+
+  
+</body>
+</html>
